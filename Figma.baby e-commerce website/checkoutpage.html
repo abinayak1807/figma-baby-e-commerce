@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - EarthBubs</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #B0E4F4, white);
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00B4D8;
+    }
+
+    .logo img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .nav-links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .nav-links a.active {
+      color: #00B4D8;
+      border-bottom: 2px solid #00B4D8;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .search-input {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .icon {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      margin: 20px 30px;
+      font-size: 14px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .checkout-form {
+      width: 60%;
+      min-width: 300px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .checkout-form h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #0077b6;
+    }
+
+    .checkout-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .checkout-form label {
+      font-weight: 500;
+    }
+
+    .checkout-form .checkbox {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .cart-summary {
+      width: 35%;
+      min-width: 280px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      height: fit-content;
+    }
+
+    .cart-summary h4 {
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    .cart-summary p {
+      margin: 6px 0;
+    }
+
+    .payment-icons img {
+      height: 25px;
+      margin: 5px;
+    }
+
+    .place-order {
+      margin-top: 15px;
+      background-color: #00B4D8;
+      border: none;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #B0E4F4;
+      padding: 30px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    footer > div {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer h4 {
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer > p {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .checkout-form,
+      .cart-summary {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">
+    <img src="image/logo-removebg-preview.png" alt="Logo" />
+    EarthBubs
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="offers.html">Offers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contacts</a>
+  </div>
+  <div class="header-icons">
+    <input type="text" class="search-input" placeholder="Search..." />
+    <span class="icon">🔍</span>
+    <span class="icon">🛒</span>
+    <span class="icon">👤</span>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumbs">Home › Add to Cart › Payments</div>
+
+<!-- Checkout Section -->
+<div class="container">
+  <div class="checkout-form">
+    <h2>Details</h2>
+    <label>First Name*</label>
+    <input type="text" id="fname" required />
+
+    <label>Company Name</label>
+    <input type="text" />
+
+    <label>Street Address</label>
+    <input type="text" required />
+
+    <label>Apartment, Floor, etc. (Optional)</label>
+    <input type="text" />
+
+    <label>Town/City*</label>
+    <input type="text" required />
+
+    <label>Phone Number*</label>
+    <input type="text" id="phone" required />
+
+    <label>Email Address*</label>
+    <input type="email" id="email" required />
+
+    <div class="checkbox">
+      <input type="checkbox" />
+      <span style="margin-left: 8px;">Save this information for faster checkout next time</span>
+    </div>
+  </div>
+
+  <div class="cart-summary">
+    <h4>Cart Total</h4>
+    <p>Subtotal: ₹2200</p>
+    <p>Discount: ₹250</p>
+    <p>Shipping: Free</p>
+    <hr />
+    <p><strong>Total: ₹1950</strong></p>
+
+    <div class="payment-icons">
+      <img src="https://img.icons8.com/color/48/000000/google-pay-india.png"/>
+      <img src="https://img.icons8.com/color/48/000000/visa.png"/>
+      <img src="https://img.icons8.com/color/48/000000/mastercard.png"/>
+      <img src="https://img.icons8.com/color/48/000000/upi.png"/>
+    </div>
+
+    <p><input type="radio" checked /> Cash on delivery</p>
+    <button class="place-order" onclick="window.location.href='order placed.html'"placeOrder()" >Place Order</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <div>
+      <h4>Know</h4>
+      <p>About Us</p>
+      <p>About Earthbubs Store</p>
+      <p>Bulk Purchase & Corporate Gifts</p>
+    </div>
+    <div>
+      <h4>Policy</h4>
+      <p>Shipping & Return Policies</p>
+      <p>Privacy Policy</p>
+      <p>FAQs</p>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <p>Email: Earthbubs@co.in</p>
+      <p>Call: +91 1234567890</p>
+      <p>Complaints: 1800 202 2222</p>
+      <p>Chat Time: Mon–Sat, 9AM–8PM</p>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <p>Instagram | Facebook | Twitter</p>
+    </div>
+  </div>
+  <p>Copyright © 2025 All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  function placeOrder() {
+    const fname = document.getElementById("fname").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+
+    if (!fname || !phone || !email) {
+      alert("Please fill all required fields!");
+      return;
+    }
+
+    alert("✅ Order placed successfully!\nThank you for shopping with EarthBubs.");
+    // You could also redirect to a "Thank you" page.
+  }
+</script>
+
+</body>
+</html>

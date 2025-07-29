@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EarthBubs | Pampers Detail</title>
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #B0E4F4, white);
+  color: #333;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  flex-wrap: wrap; /* Add this if needed for small screens */
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00B4D8;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  position: relative;
+}
+
+.search-icon-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-collage img {
+  width: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.main-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.main-image img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.product-details {
+  flex: 1.5;
+  padding: 10px 20px;
+}
+
+.product-details h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  color: #ffb703;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.color,
+.size {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.sale {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0077b6;
+}
+
+.buy-now {
+  background-color: #00b4d8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+
+.buy-now:hover {
+  background-color: #0077b6;
+}
+
+.delivery-info p {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #444;
+}
+ /* Footer Section */
+.site-footer {
+  background-color: #b0e4f4;
+  padding: 30px 20px;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  border-bottom: 1px solid #aad3dc;
+  padding-bottom: 20px;
+}
+.site-footer h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0077a8;
+}
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+.site-footer ul li {
+  margin-bottom: 8px;
+}
+.site-footer ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.site-footer ul li a:hover {
+  text-decoration: underline;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .left-gallery, .product-details {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+   <div class="header">
+  <div class="logo">
+    <img src="images/logo.png" alt="logo" />
+    EarthBubs
+  </div>
+  
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="offer.html">Offers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contacts</a>
+  </div>
+
+  <div class="search-icon-group">
+    <input type="text" class="search-input" placeholder="Search..." />
+    <i class="icon">🔍</i>
+    <i class="icon">🛒</i>
+    <i class="icon">👤</i>
+  </div>
+</div>
+
+  <div class="breadcrumb">Home › Products › Check Out</div>
+
+  <div class="container">
+    <!-- Thumbnail collage -->
+    <div class="thumbnail-collage">
+      <img src="image/Frame 1171275033.png" alt="Product Thumbnail Collage" />
+    </div>
+
+    <!-- Main product image -->
+    <div class="main-image">
+      <img src="image/Frame 1171274997.png" alt="Main Product Image" />
+    </div>
+
+    <!-- Product details -->
+    <div class="product-details">
+      <h2>New Born Pampers Active Baby Diapers</h2>
+      <p class="rating">⭐⭐⭐⭐☆ (18 reviews)</p>
+      <p class="description">
+        Give your baby the gentle care they deserve with Earthbubs Premium Baby Pampers. Designed for all-day comfort and protection with ultra-soft breathable materials.
+      </p>
+      <p class="color"><strong>Colours:</strong> 🌸 🟣 ⚪</p>
+      <p class="size"><strong>Size:</strong> Free Size</p>
+      <p class="price">
+        <span class="mrp">MRP: ₹1044.00</span><br/>
+        <span class="sale">Sale Price: ₹700.00</span>
+      </p>
+      <button class="buy-now" onclick="window.location.href='cart.html'">Buy Now</button>
+      <div class="delivery-info">
+        <p>🚚 Free Delivery</p>
+        <p>🔁 7 Days Return Policy</p>
+      </div>
+    </div>
+  </div>
+  <!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h4>KNOW</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">About Earthbubs Store</a></li>
+        <li><a href="#">Bulk Purchase & Corporate Gifts</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>TERMS & CONDITIONS</h4>
+      <ul>
+        <li><a href="#">Shipping & Return Policies</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">FAQ's</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>CONTACT US</h4>
+      <p>Email: Earthbubs@co.in</p>
+      <p>Call: +91 1234567890</p>
+      <p>Complaints: 1800 202 2222</p>
+      <p>Mon–Sat, 9.00AM to 8.00PM</p>
+      <p>Support: Ebcustomercare.com</p>
+    </div>
+    <div>
+      <h4>FOLLOW US</h4>
+      <p>
+        <a href="#"><img src="image/icons8-facebook-30.png"  alt="logo"></a>
+        <a href="#"><img src="image/icons8-instagram-logo-30.png" alt=""></a>
+        <a href="#"><img src="image/icons8-twitter-bird-24.png" alt=""></a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2025 All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

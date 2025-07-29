@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EarthBubs | Pampers</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      padding-bottom: 2px;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid #00B4D8;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input {
+      padding: 5px 10px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    .breadcrumbs {
+      padding: 10px 30px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .filter-button {
+      text-align: right;
+      padding: 0 30px;
+      margin-top: -30px;
+    }
+
+    .filter-button button {
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 30px;
+      padding: 30px;
+    }
+
+    .product-card {
+      background: #E6F7FD;
+      border-radius: 10px;
+      padding: 15px;
+      position: relative;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .new-badge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #00B4D8;
+      color: white;
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 0 0 8px 0;
+      font-weight: bold;
+    }
+
+    .product-info {
+      margin-top: 10px;
+    }
+
+    .product-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5px;
+    }
+
+    .mrp {
+      font-size: 13px;
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .price {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 14px;
+    }
+
+    .buy-btn {
+      background: #00B4D8;
+      color: white;
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .pagination {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .pagination button {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      margin: 2px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pagination .active {
+      background: #00B4D8;
+      color: white;
+      border: 1px solid #00B4D8;
+    }
+    /* Footer Section */
+.site-footer {
+  background-color: #b0e4f4;
+  padding: 30px 20px;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  border-bottom: 1px solid #aad3dc;
+  padding-bottom: 20px;
+}
+.site-footer h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0077a8;
+}
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+}
+.site-footer ul li {
+  margin-bottom: 8px;
+}
+.site-footer ul li a {
+  text-decoration: none;
+  color: #000;
+}
+.site-footer ul li a:hover {
+  text-decoration: underline;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+    @media (max-width: 768px) {
+      header, .breadcrumbs, .filter-button {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo"><img src="image/logo-removebg-preview.png" alt=""> EarthBubs</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Products</a>
+      <a href="offer.html">Offers</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contacts</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      🔍 🛒 👤
+    </div>
+  </header>
+
+  <!-- Breadcrumbs and Filter -->
+  <div class="breadcrumbs">
+    Home > Products > Soap
+  </div>
+  <div class="filter-button">
+    <button>Filter ⏷</button>
+  </div>
+
+  <!-- Products -->
+  <div class="products">
+
+    <div class="product-card">
+      <div class="new-badge">NEW</div>
+      <img src="image/Frame 1171275015.png" alt="Mama Mid Baby" />
+      <div class="product-info">
+        <div class="product-title">Natural Baby Soap</div>
+        <div class="stars">★★★★★</div>
+        <div class="price-row">
+          <span><span class="mrp">MRP ₹500.00</span><br><span class="price">Price ₹319.00</span></span>
+          <button class="buy-btn">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="new-badge">NEW</div>
+      <img src="image/Frame 1171275016.png" alt="Super Cute’s" />
+      <div class="product-info">
+        <div class="product-title">Soft Baby Soap</div>
+        <div class="stars">★★★★☆</div>
+        <div class="price-row">
+          <span><span class="mrp">MRP ₹689.00</span><br><span class="price">Price ₹430.00</span></span>
+          <button class="buy-btn">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="new-badge">NEW</div>
+      <img src="image/Frame 1171275018.png" alt="Mee Premium" />
+      <div class="product-info">
+        <div class="product-title">Newborn Soap</div>
+        <div class="stars">★★★★☆</div>
+        <div class="price-row">
+          <span><span class="mrp">MRP ₹800.00</span><br><span class="price">Price ₹399.00</span></span>
+          <button class="buy-btn" onclick="window.location.href='pampers.details.html'">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="new-badge">NEW</div>
+      <img src="image/Frame 1171275016.png" alt="Mee Diaper Pants" />
+      <div class="product-info">
+        <div class="product-title">Mee Baby Soap</div>
+        <div class="stars">★★★★★</div>
+        <div class="price-row">
+          <span><span class="mrp">MRP ₹400.00</span><br><span class="price">Price ₹350.00</span></span>
+          <button class="buy-btn">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="new-badge">NEW</div>
+      <img src="image/Frame 1171275019.png" alt="mee Pampers" />
+      <div class="product-info">
+        <div class="product-title">Milk Baby Soap</div>
+        <div class="stars">★★★★☆</div>
+        <div class="price-row">
+          <span><span class="mrp">MRP ₹466.00</span><br><span class="price">Price ₹399.00</span></span>
+          <button class="buy-btn">Buy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="new-badge">NEW</div>
+      <img src="image/Frame 1171275017.png" alt="Diaper Combo" />
+      <div class="product-info">
+        <div class="product-title">Pro Baby Soap</div>
+        <div class="stars">★★★★★</div>
+        <div class="price-row">
+          <span><span class="mrp">MRP ₹850.00</span><br><span class="price">Price ₹300.00</span></span>
+          <button class="buy-btn">Buy</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button>&lt;</button>
+    <button class="active">1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>7</button>
+    <button>&gt;</button>
+  </div>
+  <!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h4>KNOW</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">About Earthbubs Store</a></li>
+        <li><a href="#">Bulk Purchase & Corporate Gifts</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>TERMS & CONDITIONS</h4>
+      <ul>
+        <li><a href="#">Shipping & Return Policies</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">FAQ's</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>CONTACT US</h4>
+      <p>Email: Earthbubs@co.in</p>
+      <p>Call: +91 1234567890</p>
+      <p>Complaints: 1800 202 2222</p>
+      <p>Mon–Sat, 9.00AM to 8.00PM</p>
+      <p>Support: Ebcustomercare.com</p>
+    </div>
+    <div>
+      <h4>FOLLOW US</h4>
+      <p>
+        <a href="#"><img src="image/icons8-facebook-30.png"  alt="logo"></a>
+        <a href="#"><img src="image/icons8-instagram-logo-30.png" alt=""></a>
+        <a href="#"><img src="image/icons8-twitter-bird-24.png" alt=""></a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright © 2025 All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - EarthBubs</title>
+  <style>
+   * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #B0E4F4, white);
+  color: #333;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00B4D8;
+}
+
+.logo img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.nav-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active {
+  color: #00B4D8;
+  border-bottom: 3px solid #00B4D8;
+  padding-bottom: 4px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-input {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cart Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+thead {
+  background-color: #e7f8fc;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+select {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Coupon + Total Section */
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cart-actions input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.cart-actions button {
+  padding: 10px 15px;
+  background-color: #00B4D8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.cart-summary h4 {
+  margin-bottom: 10px;
+  color: #0077b6;
+}
+
+.cart-summary p {
+  margin: 8px 0;
+}
+
+.cart-summary hr {
+  margin: 10px 0;
+}
+
+.cart-summary button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00B4D8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: #B0E4F4;
+  padding: 40px;
+  font-size: 14px;
+  color: #333;
+  margin-top: 50px;
+}
+
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer > p {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 500;
+} 
+@media (max-width: 768px) {
+  .cart-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-summary {
+    width: 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    margin: 5px 10px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">
+    <img src="image/logo-removebg-preview.png" alt="Logo" />
+    EarthBubs
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="offers.html">Offers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contacts</a>
+  </div>
+  <div class="header-icons">
+    <input type="text" class="search-input" placeholder="Search..." />
+    <span class="icon">🔍</span>
+    <span class="icon">🛒</span>
+    <span class="icon">👤</span>
+  </div>
+</div>
+
+<!-- Cart Section -->
+<div class="container" style="margin-top: 40px; flex-direction: column;">
+  <h3>Home › Add to Cart</h3>
+
+  <table border="1" cellpadding="10" cellspacing="0" style="width:100%; margin: 20px 0; border-collapse: collapse; border: 1px solid #ccc;">
+    <thead style="background-color: #e7f8fc;">
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        
+        <td><img src="image/Frame 1171275031.png" width="60px" height="60px" alt="">Milk Baby Soap</td>
+        <td>₹800</td>
+        <td><select><option>01</option></select></td>
+        <td>₹800</td>
+      </tr>
+      <tr>
+        
+        <td><img src="image/Frame 1171274999.png" width="60px" height="60px">Mee Mee Pampers</td>
+        <td>₹700</td>
+        <td><select><option>02</option></select></td>
+        <td>₹1400</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+    <div>
+      <input type="text" placeholder="Coupon Code" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;" />
+      <button style="padding: 10px 15px; background-color: #00B4D8; color: #fff; border: none; border-radius: 5px;">Apply Coupon</button>
+    </div>
+
+    <div style="border: 1px solid #ccc; padding: 20px; width: 300px; border-radius: 10px;">
+      <h4>Cart Total</h4>
+      <p>Subtotal: ₹2200</p>
+      <p>Discount: ₹250</p>
+      <p>Shipping: Free</p>
+      <hr />
+      <p><strong>Total: ₹1950</strong></p>
+      <button style="padding: 10px 20px; background-color: #00B4D8; color: #fff; border: none; border-radius: 5px; margin-top: 10px;" onclick="window.location.href='checkoutpage.html'">Process to Checkout</button>
+    </div>
+  </div>
+</div>
+<span id="cart-count">0</span>
+
+<!-- Footer -->
+<footer style="background-color: #B0E4F4; padding: 40px; margin-top: 50px; font-size: 14px; color: #333;">
+  <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+    <div>
+      <h4>Know</h4>
+      <p>About Us</p>
+      <p>About Earthbubs Store</p>
+      <p>Bulk Purchase & Corporate Gifts</p>
+    </div>
+    <div>
+      <h4>Policy</h4>
+      <p>Shipping & Return Policies</p>
+      <p>Privacy Policy</p>
+      <p>FAQs</p>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <p>Email: Earthbubs@co.in</p>
+      <p>Call: +91 1234567890</p>
+      <p>Complaints: 1800 202 2222</p>
+      <p>Chat Time: Mon–Sat, 9AM–8PM</p>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <p>Instagram | Facebook | Twitter</p>
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 30px;">Copyright © 2025 All Rights Reserved.</p>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const applyBtn = document.querySelector("button:contains('Apply Coupon')");
+  const checkoutBtn = document.querySelector("button:contains('Process to Checkout')");
+  const subtotalElement = document.querySelector(".cart-summary p:nth-child(2)");
+  const discountElement = document.querySelector(".cart-summary p:nth-child(3)");
+  const totalElement = document.querySelector(".cart-summary p:nth-child(6)");
+  const couponInput = document.querySelector("input[placeholder='Coupon Code']");
+
+  // Helper to parse price string
+  function parsePrice(str) {
+    return parseFloat(str.replace(/[₹,]/g, ""));
+  }
+
+  // Helper to format as ₹ currency
+  function formatPrice(val) {
+    return `₹${val.toLocaleString("en-IN")}`;
+  }
+
+  // Default prices
+  let subtotal = parsePrice(subtotalElement.textContent.split(":")[1]);
+  let discount = parsePrice(discountElement.textContent.split(":")[1]);
+  let total = subtotal - discount;
+
+  // Update total display
+  function updateTotalDisplay() {
+    discountElement.innerHTML = `Discount: ${formatPrice(discount)}`;
+    totalElement.innerHTML = `<strong>Total: ${formatPrice(subtotal - discount)}</strong>`;
+  }
+
+  // Handle Apply Coupon
+  applyBtn.addEventListener("click", function () {
+    const code = couponInput.value.trim().toUpperCase();
+     alert("EARTH25 & BABY10");
+    if (code === "EARTH25") {
+      discount = 300; // flat ₹300 off
+      alert("Coupon applied! ₹300 discount added.");
+    } else if (code === "BABY10") {
+      discount = subtotal * 0.1; // 10% off
+      alert("Coupon applied! 10% discount added.");
+    } else {
+      discount = 0;
+      alert("Invalid coupon code.");
+    }
+
+    updateTotalDisplay();
+  });
+
+  // Handle Proceed to Checkout
+  checkoutBtn.addEventListener("click", function () {
+    alert("Proceeding to checkout...\nThank you for shopping with EarthBubs!");
+    // You can redirect here, if needed:
+    // window.location.href = "checkout.html";
+  });
+});
+
+// Get reference to cart count display element
+const cartCountElement = document.getElementById("cart-count");
+
+// Initialize cart count from localStorage or 0
+let cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
+cartCountElement.textContent = cartCount;
+
+// Function to increase cart count
+function addToCart() {
+  cartCount++;
+  localStorage.setItem("cartCount", cartCount);
+  cartCountElement.textContent = cartCount;
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Complete - EarthBubs</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: white;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #fff;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00B4D8;
+    }
+
+    .logo img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .nav-links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .nav-links a.active {
+      color: #00B4D8;
+      border-bottom: 2px solid #00B4D8;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .search-input {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .icon {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .breadcrumbs {
+      margin: 20px 30px;
+      font-size: 14px;
+    }
+
+    .order-complete {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .order-complete img {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .order-id {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .order-complete h2 {
+      font-size: 28px;
+      color: #2b2d42;
+      margin-bottom: 10px;
+    }
+
+    .order-complete p {
+      font-size: 16px;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #B0E4F4;
+      padding: 30px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    footer > div {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer h4 {
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer > p {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 5px;
+      }
+
+      .order-complete h2 {
+        font-size: 22px;
+      }
+
+      .order-complete p {
+        font-size: 14px;
+      }
+
+      footer > div {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">
+    <img src="image/logo-removebg-preview.png" alt="Logo" />
+    EarthBubs
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="offers.html">Offers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contacts</a>
+  </div>
+  <div class="header-icons">
+    <input type="text" class="search-input" placeholder="Search..." />
+    <span class="icon">🔍</span>
+    <span class="icon">🛒</span>
+    <span class="icon">👤</span>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumbs">Home › Add to Cart › Payments › Order Complete</div>
+
+<!-- Order Complete Section -->
+<div class="order-complete">
+  <img src="https://img.icons8.com/clouds/250/000000/ok--v2.png" alt="Order Complete" />
+  <div class="order-id">Order ID: OCD1232</div>
+  <h2>Your Order Is Completed!</h2>
+  <p>
+    Thank you for your order! Your order is being processed and will be completed within 3–6 hours.
+    You will receive an email confirmation when your order is completed.
+  </p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <div>
+      <h4>Know</h4>
+      <p>About Us</p>
+      <p>About Earthbubs Store</p>
+      <p>Bulk Purchase & Corporate Gifts</p>
+    </div>
+    <div>
+      <h4>TERMS & CONDITIONS</h4>
+      <p>Shipping & Return Policies</p>
+      <p>Privacy Policy</p>
+      <p>FAQ’s</p>
+    </div>
+    <div>
+      <h4>CONTACT US</h4>
+      <p>For Sale: Earthbubs@co.in</p>
+      <p>Call: +91 1234567890</p>
+      <p>For Complaints: 1800 202 2222</p>
+      <p>Chat Time: Our Team is Available <br/> From Monday to Saturday from <br/> 9.00AM to 8.00PM</p>
+      <p>For Complaints: Ebcustomercare.com</p>
+    </div>
+    <div>
+      <h4>FOLLOW US</h4>
+      <p>Instagram | Facebook | Twitter</p>
+    </div>
+  </div>
+  <p>Copyright © 2025 All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  // Auto generate order ID example (optional)
+  const orderId = "OCD" + Math.floor(Math.random() * 10000);
+  document.querySelector(".order-id").textContent = "Order ID: " + orderId;
+</script>
+
+</body>
+</html>
